@@ -54,7 +54,6 @@ A physical Spotify controller built with an ESP32-C3 and a 2.8" ILI9341 TFT disp
 | KEY-3 | GPIO 8 | Skip track |
 | All GND pins | GND | Common ground |
 
-> Each button has two pins. One pin goes to the GPIO, the other goes to GND. No resistor needed — the code uses `INPUT_PULLUP` which activates the ESP32's built-in pull-up resistor.
 
 ---
 
@@ -78,13 +77,6 @@ Open the Library Manager in Arduino IDE and install:
 
 Install **SpotifyEsp32** manually as a `.zip` from [github.com/FinianLandes/SpotifyEsp32](https://github.com/FinianLandes/SpotifyEsp32) via Sketch → Include Library → Add .ZIP Library.
 
-### 4. Spotify API setup
-
-1. Go to [developer.spotify.com](https://developer.spotify.com/) → Dashboard → Create App
-2. Give it any name and description
-3. Set a redirect URI (e.g. `http://localhost:8888`)
-4. Copy your **Client ID** and **Client Secret**
-
 ### 5. Configure the code
 
 Open the firmware file and fill in your credentials:
@@ -102,11 +94,6 @@ Also add your name to the boot splash:
 tft.write("by YOUR NAME");
 ```
 
-### 6. Flash
-
-Connect the ESP32 via USB-C, select the correct COM port in Arduino IDE, and hit Upload.
-
----
 
 ## Screen layout
 
@@ -124,53 +111,22 @@ Connect the ESP32 via USB-C, select the correct COM port in Arduino IDE, and hit
               320px wide
 ```
 
----
-
-## How the progress bar works
-
-The Spotify API returns two values — how far into the song you are (`progress_ms`) and the total song length (`duration_ms`). The bar is 300px wide. Every 2 seconds it recalculates:
-
-```
-filled_px = (progress_ms / duration_ms) × 300
-```
-
-Only the bar region redraws each tick, not the whole screen, so there is no flicker.
 
 ---
 
 ## CAD / Case
 
-The case is designed in Fusion 360. The lid is secured with 4× M3 heat set inserts pressed into the print using a soldering iron tip, then fastened with M3 screws. Button holes are cut using key switch plate geometry from [kbplate.ai03.com](https://kbplate.ai03.com/).
+The case is designed in Fusion 360. The lid is secured with 4× M3 heat set inserts pressed into the print using a soldering iron tip, then fastened with M3 screws. 
 
-Fusion 360 is free for students at [autodesk.com/education](https://www.autodesk.com/education/edu-software/fusion)
 
----
+![CAD](screenshots/cad.png)
 
-## Folder structure
 
-```
-Project-Play/
-├── firmware/
-│   └── main.ino        # Arduino sketch
-├── cad/
-│   └── case.f3d        # Fusion 360 case file
-├── image/
-│   └── wiring.png      # Wiring reference
-└── README.md
-```
 
 ---
 
-## Built with
+## Schematics
 
-- [SpotifyEsp32](https://github.com/FinianLandes/SpotifyEsp32) by FinianLandes
-- [Adafruit ILI9341 Library](https://github.com/adafruit/Adafruit_ILI9341)
-- [Adafruit GFX Library](https://github.com/adafruit/Adafruit-GFX-Library)
-- Fusion 360 for CAD
-- Arduino IDE for firmware
+I have created a schematic for the project using kicad for better understanding of the circuit.
 
----
-
-## License
-
-MIT
+![circuit](screenshots/circuit.png)
