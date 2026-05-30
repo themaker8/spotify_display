@@ -1,6 +1,6 @@
 # Project Play — Spotify Display
 
-A physical Spotify controller built with an ESP32-C3 and a 2.8" ILI9341 TFT display. Shows the currently playing track, artist, a live progress bar, and time remaining. Three buttons let you skip, go back, and play/pause — without touching your phone.
+A physical Spotify controller built with an ESP32-C3 and a 2.8" ILI9341 TFT display. Shows the currently playing track, artist, a live progress bar, volume control and time remaining. Three buttons let you skip, go back, and play/pause — without touching your phone.
 
 ---
 
@@ -11,6 +11,7 @@ A physical Spotify controller built with an ESP32-C3 and a 2.8" ILI9341 TFT disp
 - Time remaining counter (e.g. `-2:34`)
 - PLAYING / PAUSED indicator
 - Three physical buttons: previous, play/pause, skip
+- Rotary encoder for volume control
 - Boot splash screen on startup
 - Connects to Spotify over WiFi using the official Spotify Web API
 
@@ -27,6 +28,7 @@ A physical Spotify controller built with an ESP32-C3 and a 2.8" ILI9341 TFT disp
 | 6×6×5mm Tactile Push Button Switch | For prev / play-pause / skip (pack of 10) | 1 pack | [robu.in](https://robu.in/product/6x6x5-tactile-push-button-switch/) |
 | M3×4mm Brass Heat Set Insert | For securing the 3D printed case lid (pack of 25) | 1 pack | [robu.in](https://robu.in/product/m3-x-4-mm-brass-heat-set-knurl-threaded-round-insert-nut-25-pcs/) |
 | Male-to-Female Jumper Wires 20cm | For connecting ESP32 to TFT and buttons (pack of 40) | 1 pack | [robu.in](https://robu.in/product/male-to-female-jumper-wires-40pcs-20cm/) |
+| Rotary encoder | For volume control | 1 pack | [robu.in](https://robu.in/product/hs-s32a-rotary-encoders/) |
 
 
 ---
