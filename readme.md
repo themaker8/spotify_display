@@ -56,6 +56,16 @@ A physical Spotify controller built with an ESP32-C3 and a 2.8" ILI9341 TFT disp
 | KEY-3 | GPIO 8 | Skip track |
 | All GND pins | GND | Common ground |
 
+#### Rotary encoder -> ESP32
+
+| Encoder | GPIO |
+|---|---|
+| A (CLK)| D10 |
+| B (DT) |   RX |
+| C      |      GND |
+| S1     |      TX |
+| S2     |       GND|
+
 
 ---
 
@@ -118,11 +128,11 @@ tft.write("by YOUR NAME");
 
 ## CAD / Case
 
-The case is designed in Fusion 360. The lid is secured with 4× M3 heat set inserts pressed into the print using a soldering iron tip, then fastened with M3 screws. 
+The case is designed in Fusion 360 and later was edited in onshape. The lid is secured with 4× M3 heat set inserts pressed into the print using a soldering iron tip, then fastened with M3 screws. 
 
 
-![CAD](screenshots/cad.png)
-
+![CAD](screenshots/cad1.png)
+![CAD](screenshots/cad2.png)
 
 
 ---
